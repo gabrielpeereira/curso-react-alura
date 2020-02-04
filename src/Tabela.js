@@ -36,12 +36,12 @@ const TableBody = props => {
 class Tabela extends Component {
   render() {
 
-    const { autores } = this.props;
+    const { autores, removeAutor } = this.props;
 
     return (
       <table>
         <TableHead />
-        <TableBody autores= { autores } />
+        <TableBody autores= { autores } removeAutor = { removeAutor }/>
       </table>
     );
   }

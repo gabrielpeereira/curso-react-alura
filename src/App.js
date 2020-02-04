@@ -27,13 +27,26 @@ class App extends Component {
         livro: 'DevOps',
         preco: '100'
       }
-    ]
+    ],
+  };
+
+  removeAutor = () => {
+
+    const { autores}  = this.state;
+
+    this.setState(
+      {
+        autores : autores.filter((autor, posAtual){
+
+        }),
+      }
+    );
   }
 
   render(){
     return (
       <div className="App">
-        <Tabela autores={ this.state.autores }/>
+        <Tabela autores={ this.state.autores } removeAutor = { this.removeAutor }/>
       </div>
     )
   };
