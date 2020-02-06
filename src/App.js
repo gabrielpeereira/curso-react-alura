@@ -32,15 +32,16 @@ class App extends Component {
 
   removeAutor = () => {
 
-    const { autores}  = this.state;
+    const { autores } = this.state;
 
-    this.setState(
-      {
-        autores : autores.filter((autor, posAtual){
-
+   this.setState(
+     {
+        autores : autores.filter((autor, posAtual) => {
+          console.log(autor, posAtual);
+          return posAtual;
         }),
-      }
-    );
+     }
+   )
   }
 
   render(){

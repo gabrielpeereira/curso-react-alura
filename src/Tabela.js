@@ -20,7 +20,7 @@ const TableBody = props => {
             <td>{linha.nome}</td>
             <td>{linha.livro}</td>
             <td>{linha.preco}</td>
-            <td><button>Remover</button></td>
+            <td><button onclick= { () => props.removeAutor()}>Remover</button></td>
           </tr>
         )
     });
