@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Tabela from './Tabela';
-import { render } from '@testing-library/react';
 
 class App extends Component {
 
@@ -30,15 +29,15 @@ class App extends Component {
     ],
   };
 
-  removeAutor = (index) => {
+  removeAutor = index => {
 
     const { autores } = this.state;
 
    this.setState(
      {
         autores : autores.filter((autor, posAtual) => {
-          console.log(index, posAtual);
-          return;
+          
+          return posAtual !== index;
         }),
      }
    )
