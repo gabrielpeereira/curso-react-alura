@@ -1,30 +1,49 @@
 import React, { Component } from 'react';
 
 class Formulario extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.stateInicial = {
+            nome:'',
+            livro:'',
+            preco:''
+        }
+
+        this.stage = this.stateInicial;
+    }
+
     render(){
+
+        const { nome, livro, preco } = this.stage;
+
         return(
             <form>
 
-                <label for="nome">Nome</label>
+                <label htmlFor="nome">Nome</label>
                 <input
                     id="nome"
                     type="text"
                     name="nome"
+                    value={nome}
                 />
 
-                <label for="livro">Livro</label>
+                <label htmlFor="livro">Livro</label>
                 <input
                     id="livro"
                     type="text"
                     name="livro"
+                    value={livro}
                 />
 
 
-                <label for="preco">Preço</label>
+                <label htmlFor="preco">Preço</label>
                 <input
                     id="preco"
                     type="text"
                     name="preco"
+                    value={preco}
                 />
 
 
