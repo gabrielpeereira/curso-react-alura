@@ -44,12 +44,16 @@ class App extends Component {
    )
   }
 
+  escutadorDeSubmit = autor => {
+    this.setState({ autores:[...this.state.autores, autor] });
+  }
+
   render(){
     return (
       <div className="App">
       <Fragment>
         <Tabela autores={ this.state.autores } removeAutor = { this.removeAutor }/>
-        <Form/>
+        <Form escutadorDeSubmit={this.escutadorDeSubmit}/>
       </Fragment>
       </div>
     )
