@@ -6,7 +6,7 @@ class Formulario extends Component {
         super(props);
 
         this.stateInicial = {
-            nome:'',
+            name:'',
             livro:'',
             preco:''
         }
@@ -14,19 +14,28 @@ class Formulario extends Component {
         this.stage = this.stateInicial;
     }
 
+    escultadorDeInput = event => {
+        const { name, value } = event.target;
+
+        this.setState({
+            [name] : value
+        });
+    }
+
     render(){
 
-        const { nome, livro, preco } = this.stage;
+        const { name, livro, preco } = this.stage;
 
         return(
             <form>
 
-                <label htmlFor="nome">Nome</label>
+                <label htmlFor="name">name</label>
                 <input
-                    id="nome"
+                    id="name"
                     type="text"
-                    name="nome"
-                    value={nome}
+                    name="name"
+                    value={name}
+                    onChange = {this.escultadorDeInput}
                 />
 
                 <label htmlFor="livro">Livro</label>
@@ -35,6 +44,7 @@ class Formulario extends Component {
                     type="text"
                     name="livro"
                     value={livro}
+                    onChange = {this.escultadorDeInput}
                 />
 
 
@@ -44,6 +54,7 @@ class Formulario extends Component {
                     type="text"
                     name="preco"
                     value={preco}
+                    onChange = {this.escultadorDeInput}
                 />
 
 
