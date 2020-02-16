@@ -4,64 +4,67 @@ class Formulario extends Component {
 
     constructor(props){
         super(props);
-
+    
         this.stateInicial = {
-            name:'',
+            nome:'',
             livro:'',
-            preco:''
+            preco:'',
         }
-
-        this.stage = this.stateInicial;
+    
+        this.state = this.stateInicial;
     }
 
-    escultadorDeInput = event => {
+    escutadorDeInput = event => {
         const { name, value } = event.target;
-
+    
         this.setState({
             [name] : value
         });
     }
 
-    render(){
 
-        const { name, livro, preco } = this.stage;
+    render() {
 
-        return(
+        const {nome, livro, preco} = this.state;
+    
+        return (
             <form>
-
-                <label htmlFor="name">name</label>
+    
+                <label htmlFor="nome">Nome</label>
                 <input
-                    id="name"
+                    id="nome"
                     type="text"
-                    name="name"
-                    value={name}
-                    onChange = {this.escultadorDeInput}
+                    name="nome"
+                    value={nome}
+                    onChange={this.escutadorDeInput}
                 />
-
+    
                 <label htmlFor="livro">Livro</label>
                 <input
                     id="livro"
                     type="text"
                     name="livro"
                     value={livro}
-                    onChange = {this.escultadorDeInput}
+                    onChange={this.escutadorDeInput}
                 />
-
-
+    
+    
                 <label htmlFor="preco">Preço</label>
                 <input
                     id="preco"
                     type="text"
                     name="preco"
                     value={preco}
-                    onChange = {this.escultadorDeInput}
+                    onChange={this.escutadorDeInput}
                 />
-
-
+    
+    
                 <button type="button">Salvar
                 </button>
             </form>
+    
         )
+    
     }
 }
 
