@@ -4,12 +4,12 @@ import React from 'react';
 const Header = () => {
     return(
         <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+        <div className="nav-wrapper indigo lighten-2">
+          <a href="/home" className="brand-logo">Loja de livros</a>
+          <ul  className="right">
+            <li><a href="/autores">Autores</a></li>
+            <li><a href="/livros">Livros</a></li>
+            <li><a href="/sobre">Sobre</a></li>
           </ul>
         </div>
       </nav>
